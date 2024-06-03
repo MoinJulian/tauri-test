@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@tauri-apps/api':
+        specifier: ^1.5.6
+        version: 1.5.6
+      cargo:
+        specifier: ^0.8.0
+        version: 0.8.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -388,6 +395,10 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.0
 
+  '@tauri-apps/api@1.5.6':
+    resolution: {integrity: sha512-LH5ToovAHnDVe5Qa9f/+jW28I6DeMhos8bNDtBOmmnaDpPmJmYLyHdeDblAWWWYc7KKRDg9/66vMuKyq0WIeFA==}
+    engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+
   '@tauri-apps/cli-darwin-arm64@1.5.14':
     resolution: {integrity: sha512-lxoSOp3KKSqzHJa7iT32dukPGMlfsTuja1xXSgwR8o/fqzpYJY7FY/3ZxesP8HR66FcK+vtqa//HNqeOQ0mHkA==}
     engines: {node: '>= 10'}
@@ -586,6 +597,9 @@ packages:
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+
+  cargo@0.8.0:
+    resolution: {integrity: sha512-Fl49HZ8CAs4++TjtwcoZgwyq2ZQUiFVGQ3byyKKUilNk65iuBRDjpCGH/AUORvAODaVVbGbKyFCa67tlDG3p4g==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1554,6 +1568,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@tauri-apps/api@1.5.6': {}
+
   '@tauri-apps/cli-darwin-arm64@1.5.14':
     optional: true
 
@@ -1747,6 +1763,8 @@ snapshots:
   buffer-crc32@0.2.13: {}
 
   callsites@3.1.0: {}
+
+  cargo@0.8.0: {}
 
   chalk@4.1.2:
     dependencies:
