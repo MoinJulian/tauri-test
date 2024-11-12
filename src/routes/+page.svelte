@@ -3,11 +3,17 @@
 
   let name = $state("");
   let greetMsg = $state("");
+  let courses = $state([]);
 
   async function greet(event: Event) {
     event.preventDefault();
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
     greetMsg = await invoke("greet", { name });
+  }
+
+  async function getCourses(event: Event) {
+    event.preventDefault();
+    courses = await invoke("get_courses");
   }
 </script>
 
@@ -32,6 +38,9 @@
     <button type="submit">Greet</button>
   </form>
   <p>{greetMsg}</p>
+
+  <button onclick={getCourses}>Get Courses</button>
+  <p>{JSON.stringify(courses)}</p>
 </main>
 
 <style>
