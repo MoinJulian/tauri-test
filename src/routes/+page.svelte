@@ -3,7 +3,7 @@
 
   let name = $state("");
   let greetMsg = $state("");
-  let courses = $state([]);
+  let courses = $state();
 
   async function greet(event: Event) {
     event.preventDefault();
