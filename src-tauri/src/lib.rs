@@ -5,12 +5,20 @@ fn greet(name: &str) -> String {
 }
 
 use tauri_plugin_http::reqwest;
-use dotenvy::dotenv;
+use dotenv::dotenv;
 use std::env;
 
 fn get_api_key() -> String {
-    dotenv().ok(); // Load environment variables from `.env`
-    env::var("SECRET_INTERNAL_API_KEY").expect("SECRET_INTERNAL_API_KEY must be set")
+    dotenv().ok();
+    let key: &str = "SECRET_INTERNAL_API_KEY";
+
+    match env::var(key) {
+        Ok(val) => val,
+        Err(e) => {
+            println!("Error {}: {}", key, e);
+            String::new()
+        },
+    }
 }
 
 #[tauri::command(async)]
@@ -29,4 +37,4 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![greet, get_courses])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
-} 
+}
